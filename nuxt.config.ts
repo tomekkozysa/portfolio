@@ -6,21 +6,21 @@ export default defineNuxtConfig({
 		"@nuxt/content",
 		"@nuxt/image-edge",
 		"@vueuse/nuxt",
-		"nuxt-gtag"
+		// "nuxt-gtag"
 		// "@tailwindcss/typography",
 	],
-	gtag:{
-		id:'G-SD2TPL0JPX',
-		initCommands: [
-			['consent', 'default', {
-			  analytics_storage: 'denied',
-			  ad_storage: 'denied',
-			  ad_user_data: 'denied',
-			  ad_personalization: 'denied',
-			  wait_for_update: 500,
-			}]
-		]
-	},
+	// gtag:{
+	// 	id:'G-SD2TPL0JPX',
+	// 	initCommands: [
+	// 		['consent', 'default', {
+	// 		  analytics_storage: 'denied',
+	// 		  ad_storage: 'denied',
+	// 		  ad_user_data: 'denied',
+	// 		  ad_personalization: 'denied',
+	// 		  wait_for_update: 500,
+	// 		}]
+	// 	]
+	// },
 
 	plugins: [],
 	target: "static",
@@ -177,6 +177,12 @@ export default defineNuxtConfig({
 			anchorLinks:false,
 			mdc:true,
 		},
+	  },
+
+	  runtimeConfig: {
+		public: {
+		  gaId: process.env.NUXT_PUBLIC_GA_ID || '' 
+		}
 	  },
 	  
 

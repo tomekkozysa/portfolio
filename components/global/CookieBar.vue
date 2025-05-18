@@ -4,56 +4,36 @@
         class="cookie-bar py-4 px-8 flex flex-wrap items-center gap-4">
         I use Google Analytics to know how my website is performing, hope that's ok
         <div class="actions flex">
-            <div class="cookie-bar-action" @click="acceptCookies">
+            <div class="cookie-bar-action" @click="() => { acceptCookies(); isHidden.value = true }">
                 Yes, that's fine
             </div>
-            <div class="cookie-bar-action" @click="rejectCookies">
+            <div class="cookie-bar-action" @click="() => { rejectCookies(); isHidden.value = true }">
                 Please don't do it!
             </div>
         </div>
     </div>
 </template>
-<script setup>
 
-const gtag = useGtag()
-const analyticsCookie = useCookie('analyticsCookie')
-const hasAccepted = computed(()=>analyticsCookie.value)
+
+<script setup>
+const {
+  hasAccepted,
+  acceptCookies,
+  rejectCookies,
+  initialize
+} = useCookieConsent()
+
 const isHidden = ref(false)
-const route = useRoute();
-watch(() => route.fullPath, () => {
-    if(!hasAccepted.value){
-        isHidden.value = false
-    }
-});
-  onMounted(()=>{
-    if(analyticsCookie.value){
-        isHidden.value = true
-        gtag.gtag('consent','default',{
-            'analytics_storage':'granted',
-        })
-    }
-    else{
-        isHidden.value = false
-    }
+
+onMounted(() => {
+    console.log('useRuntimeConfig().public.gaId',useRuntimeConfig().public.gaId)
+  initialize()
+  if (hasAccepted.value) {
+    isHidden.value = true
+  }
 })
-const acceptCookies = ()=>{
-    analyticsCookie.value = true
-    isHidden.value = true
-    gtag.gtag('consent','update',{
-        'analytics_storage':'granted',
-        'wait_for_update':500
-    })
-}
-const rejectCookies = ()=>{
-    analyticsCookie.value = false
-    isHidden.value = true
-    console.log('hide')
-    gtag.gtag('consent','update',{
-        'analytics_storage':'denied',
-        'wait_for_update':500
-    })
-}
 </script>
+
 <style>
 .cookie-bar{
     position: sticky;
