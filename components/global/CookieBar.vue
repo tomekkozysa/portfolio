@@ -4,10 +4,10 @@
         class="cookie-bar py-4 px-8 flex flex-wrap items-center gap-4">
         I use Google Analytics to know how my website is performing, hope that's ok
         <div class="actions flex">
-            <div class="cookie-bar-action" @click="() => { acceptCookies(); isHidden.value = true }">
+            <div class="cookie-bar-action" @click="() => { acceptCookies(); isHidden = true }">
                 Yes, that's fine
             </div>
-            <div class="cookie-bar-action" @click="() => { rejectCookies(); isHidden.value = true }">
+            <div class="cookie-bar-action" @click="() => { rejectCookies(); isHidden = true }">
                 Please don't do it!
             </div>
         </div>
