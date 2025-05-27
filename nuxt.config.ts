@@ -41,6 +41,10 @@ export default defineNuxtConfig({
 					content:
 						"user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=.2, width=device-width",
 				},
+				{ 	
+					name : "google-site-verification",
+					content:"bvokHxMko__JtyTBnr7BeqwEjhe4yGg2_WDvSlxajts"
+				}
 			],
 			link: [
 				{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }
