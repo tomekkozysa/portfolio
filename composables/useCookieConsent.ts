@@ -31,23 +31,33 @@ export const useCookieConsent = () => {
     script.src = GA_SRC
   
     script.onload = () => {
-      console.log('[GA] Script loaded')
+      console.log('[GA] Script loaded', script)
   
       window.dataLayer = window.dataLayer || []
       function gtag(...args: any[]) {
         console.log('[GA] gtag called:', args)
         window.dataLayer.push(args)
       }
-      window.gtag = gtag
+      // window.gtag = gtag
   
       gtag('js', new Date())
-      gtag('config', GA_ID, {
-        anonymize_ip: true,
-        debug_mode: process.env.NODE_ENV !== 'production'
-      })
+      gtag('config', GA_ID)
+      // , {
+      //   anonymize_ip: true,
+      //   debug_mode: process.env.NODE_ENV !== 'production'
+      // })
   
+
+
+      window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SD2TPL0JPX');
+
+
       // ✅ GA is now ready — fire page view if needed
-      onReady?.()
+      // onReady?.()
     }
   
     document.head.appendChild(script)
@@ -75,7 +85,7 @@ export const useCookieConsent = () => {
     updateConsent('granted')
   
     injectGAScript(() => {
-      trackPageView()
+      // trackPageView()
     })
   }
 
