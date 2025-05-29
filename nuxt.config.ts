@@ -3,25 +3,12 @@ import tailwindTypography from "@tailwindcss/typography";
 export default defineNuxtConfig({
 	modules: [
 		"@nuxtjs/tailwindcss",
-		"@nuxt/content",
 		"@nuxt/image-edge",
 		"@vueuse/nuxt",
-		// "nuxt-gtag"
-		// "@tailwindcss/typography",
+		"@nuxtjs/sitemap",
+		"@nuxtjs/robots",
+		"@nuxt/content",
 	],
-	// gtag:{
-	// 	id:'G-SD2TPL0JPX',
-	// 	initCommands: [
-	// 		['consent', 'default', {
-	// 		  analytics_storage: 'denied',
-	// 		  ad_storage: 'denied',
-	// 		  ad_user_data: 'denied',
-	// 		  ad_personalization: 'denied',
-	// 		  wait_for_update: 500,
-	// 		}]
-	// 	]
-	// },
-
 	plugins: [],
 	target: "static",
 
@@ -191,6 +178,14 @@ export default defineNuxtConfig({
 		  gaId: process.env.NUXT_PUBLIC_GA_ID || '',
 		  cookieName:process.env.NUXT_PUBLIC_COOKIE_NAME || '',
 		}
+	  },
+
+	  sitemap: {
+		hostname: 'https://kozysa.me',
+		exclude: ['/components/**','/layouts/**'],
+		sources: [
+		  '/api/_sitemap__/urls'
+		]
 	  },
 	  
 
