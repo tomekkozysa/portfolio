@@ -23,33 +23,36 @@ export const useCookieConsent = () => {
     })
   }
 
-  const injectGAScript = () => {
-    if (!GA_ID || window.gtag) return
-
+  const injectGAScript = (onReady?: () => void) => {
+    if (!GA_ID || document.getElementById('ga-script')) return
+  
     const script = document.createElement('script')
     script.async = true
     script.src = GA_SRC
-    
+  
     script.onload = () => {
       console.log('[GA] Script loaded')
-    
+  
       window.dataLayer = window.dataLayer || []
       function gtag(...args: any[]) {
         console.log('[GA] gtag called:', args)
         window.dataLayer.push(args)
       }
       window.gtag = gtag
-    
+  
       gtag('js', new Date())
       gtag('config', GA_ID, {
         anonymize_ip: true,
-        debug_mode: true
+        debug_mode: process.env.NODE_ENV !== 'production'
       })
+  
+      // ✅ GA is now ready — fire page view if needed
+      onReady?.()
     }
-    
-
+  
     document.head.appendChild(script)
   }
+  
 
   const trackPageView = () => {
     if (typeof window.gtag !== 'function') return
@@ -70,7 +73,10 @@ export const useCookieConsent = () => {
     analyticsCookie.value = true
     isHidden.value = true
     updateConsent('granted')
-    injectGAScript()
+  
+    injectGAScript(() => {
+      trackPageView()
+    })
   }
 
   const rejectCookies = () => {
