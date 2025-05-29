@@ -27,9 +27,9 @@ export default defineNuxtConfig({
 
 	app: {
 		head: {
-			charset: "utf-16",
+			charset: "utf-8",
 			viewport: "width=500, initial-scale=1",
-			title: "Tomasz Kozysa | UX & UI | Responsive Web Design | Design & Development",
+			title: "Tomasz Kozysa | UX & UI | Responsive Web Design & Development",
 			meta: [
 				{
 					name: "description",
@@ -49,7 +49,10 @@ export default defineNuxtConfig({
 			link: [
 				{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }
 			],
-			script: [{ src: "/js/anime.js" }]
+			script: [{ src: "/js/anime.js" }],
+			htmlAttrs: {
+				lang: 'en'
+			  }
 			  
 		},
 	},
