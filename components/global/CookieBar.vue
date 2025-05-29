@@ -1,8 +1,13 @@
 <template>
-    <div  v-show="!hasAccepted" 
+    <div v-show="!hasAccepted" 
         :class="[isHidden ?  'is_hidden' : '' ]"
-        class="cookie-bar py-4 px-8 flex flex-wrap items-center gap-4">
-        I use Google Analytics to know how my website is performing, hope that's ok
+        class="cookie-bar py-4 px-8 flex flex-wrap items-center gap-4 text-sm">
+        <p>
+        I use Google Analytics to know how my website is used and to help improve it. 
+      You can read more in my 
+      <NuxtLink to="/privacy-policy" class="underline hover:text-gray-800">
+      Privacy & Cookie Policy</NuxtLink>. You can change your preferences at any time.
+    </p>
         <div class="actions flex">
             <div class="cookie-bar-action" @click="() => { acceptCookies(); isHidden = true }">
                 Yes, that's fine
@@ -23,15 +28,22 @@ const {
   initialize
 } = useCookieConsent()
 
-const isHidden = ref(false)
+const isHidden = ref(true)
 
 onMounted(() => {
-    console.log('useRuntimeConfig().public.gaId',useRuntimeConfig().public.gaId)
+    
   initialize()
   if (hasAccepted.value) {
     isHidden.value = true
+  } else {
+    isHidden.value = false
   }
+    
+  window.addEventListener('show-cookie-banner', () => {
+    isHidden.value = false
+  })
 })
+
 </script>
 
 <style>

@@ -185,7 +185,8 @@ export default defineNuxtConfig({
 
 	  runtimeConfig: {
 		public: {
-		  gaId: process.env.NUXT_PUBLIC_GA_ID || '' 
+		  gaId: process.env.NUXT_PUBLIC_GA_ID || '',
+		  cookieName:process.env.NUXT_PUBLIC_COOKIE_NAME || '',
 		}
 	  },
 	  

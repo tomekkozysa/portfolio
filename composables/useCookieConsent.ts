@@ -5,7 +5,7 @@ import { useCookie } from '#app'
 export const useCookieConsent = () => {
   const GA_ID = useRuntimeConfig().public.gaId || ''
   const GA_SRC = useRuntimeConfig().public.gaScriptUrl || `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`
-  const COOKIE_NAME = 'analyticsCookie'
+  const COOKIE_NAME = useRuntimeConfig().public.cookieName || 'analyticsCookie';
   const COOKIE_EXPIRE_DAYS = parseInt(useRuntimeConfig().public.cookieExpireDays || '365', 10)
 
   const analyticsCookie = useCookie<boolean>(COOKIE_NAME, {
