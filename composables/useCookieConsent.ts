@@ -31,24 +31,39 @@ export const useCookieConsent = () => {
     script.src = GA_SRC
     
     script.onload = () => {
+      console.log('[GA] Script loaded')
+    
       window.dataLayer = window.dataLayer || []
       function gtag(...args: any[]) {
+        console.log('[GA] gtag called:', args)
         window.dataLayer.push(args)
       }
       window.gtag = gtag
-
+    
       gtag('js', new Date())
       gtag('config', GA_ID, {
         anonymize_ip: true,
-        debug_mode:true
+        debug_mode: true
       })
-
     }
+    
 
     document.head.appendChild(script)
   }
 
+  const trackPageView = () => {
+    if (typeof window.gtag !== 'function') return
+  
+    window.gtag('event', 'page_view', {
+      page_title: document.title,
+      page_location: window.location.href,
+      page_path: window.location.pathname,
+      debug_mode: true
+    })
 
+    console.log('[GA] manual page_view sent:', window.location.pathname)
+  }
+  
   
 
   const acceptCookies = () => {
@@ -79,6 +94,7 @@ export const useCookieConsent = () => {
     isHidden,
     acceptCookies,
     rejectCookies,
-    initialize
+    initialize,
+    trackPageView
   }
 }
