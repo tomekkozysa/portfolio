@@ -29,19 +29,27 @@ export const useCookieConsent = () => {
     const script = document.createElement('script')
     script.async = true
     script.src = GA_SRC
-    document.head.appendChild(script)
+    
+    script.onload = () => {
+      window.dataLayer = window.dataLayer || []
+      function gtag(...args: any[]) {
+        window.dataLayer.push(args)
+      }
+      window.gtag = gtag
 
-    window.dataLayer = window.dataLayer || []
-    function gtag(...args: any[]) {
-      window.dataLayer.push(args)
+      gtag('js', new Date())
+      gtag('config', GA_ID, {
+        anonymize_ip: true,
+        debug_mode:true
+      })
+
     }
-    window.gtag = gtag
 
-    gtag('js', new Date())
-    gtag('config', GA_ID, {
-      anonymize_ip: true
-    })
+    document.head.appendChild(script)
   }
+
+
+  
 
   const acceptCookies = () => {
     analyticsCookie.value = true
