@@ -5,7 +5,7 @@
         <p>
         I use Google Analytics to know how my website is used and to help improve it. 
       You can read more in my 
-      <NuxtLink to="/privacy-policy" class="underline hover:text-gray-800">
+      <NuxtLink to="/privacy-cookie-policy" class="underline hover:text-gray-800">
       Privacy & Cookie Policy</NuxtLink>. You can change your preferences at any time.
     </p>
         <div class="actions flex">
