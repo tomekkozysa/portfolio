@@ -1,51 +1,46 @@
 <template>
-    <div v-show="!hasAccepted" 
-        :class="[isHidden ?  'is_hidden' : '' ]"
-        class="cookie-bar py-4 px-8 flex flex-wrap items-center gap-4 text-sm">
-        <p>
-        I use Google Analytics to know how my website is used and to help improve it. 
+  <div v-show="analyticsCookie===undefined" 
+       :class="[isHidden ?  'is_hidden' : '' ]"
+       class="cookie-bar py-4 px-8 flex flex-wrap items-center gap-4 text-sm">
+    <p>
+      I use Google Analytics to know how my website is used and to help improve it. 
       You can read more in my 
       <NuxtLink to="/privacy-cookie-policy" class="underline hover:text-gray-800">
-      Privacy & Cookie Policy</NuxtLink>. You can change your preferences at any time.
+        Privacy & Cookie Policy
+      </NuxtLink>. You can change your preferences at any time.
     </p>
-        <div class="actions flex">
-            <div class="cookie-bar-action" @click="() => { acceptCookies(); isHidden = true }">
-                Yes, that's fine
-            </div>
-            <div class="cookie-bar-action" @click="() => { rejectCookies(); isHidden = true }">
-                Please don't do it!
-            </div>
-        </div>
+    <div class="actions flex">
+      <div class="cookie-bar-action" @click="acceptCookies">
+        Yes, that's fine
+      </div>
+      <div class="cookie-bar-action" @click="rejectCookies">
+        Please don't do it!
+      </div>
     </div>
+  </div>
 </template>
-
 
 <script setup>
 const {
   hasAccepted,
+  // isHidden,
   acceptCookies,
   rejectCookies,
-  initialize
+  initialize,
+  analyticsCookie
 } = useCookieConsent()
 
-const isHidden = ref(true)
-
+  const isHidden = computed(()=>{
+    return hasAccepted.va
+  })
 onMounted(() => {
-    
   initialize()
-  if (hasAccepted.value) {
-    isHidden.value = true
-  } else {
-    isHidden.value = false
-  }
-    
   window.addEventListener('show-cookie-banner', () => {
+    console.log('show-cookie-banner')
     isHidden.value = false
   })
 })
-
 </script>
-
 <style>
 .cookie-bar{
     position: sticky;
@@ -67,6 +62,4 @@ onMounted(() => {
     cursor: pointer;
     
 }
-</style>	
-    
-    
+</style>

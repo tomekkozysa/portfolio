@@ -1,24 +1,42 @@
 <script setup>
-const cookieName = useRuntimeConfig().public.cookieName || 'analyticsCookie'
+import { useCookieConsent } from '@/composables/useCookieConsent'
 
-// Remove the cookie and reload the page or show the banner again
-function handleReset() {
-  const cookie = useCookie(cookieName)
-  cookie.value = null
+const {
+  hasAccepted,
+  acceptCookies,
+  rejectCookies
+} = useCookieConsent()
 
-  // Option A: Reload the page to re-trigger the banner
-  // location.reload()
-
-  // Option B: Dispatch a global event your banner listens to
-  window.dispatchEvent(new Event('show-cookie-banner'))
+const toggleConsent = () => {
+  if (hasAccepted.value) {
+    rejectCookies()
+  } else {
+    acceptCookies()
+  }
 }
 </script>
 
 <template>
-  <button
-    class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 transition inline-block w-fit mt-4"
-    @click="handleReset"
-  >
-    Change Cookie Settings
-  </button>
+  <div class="mt-4">
+    <p class="mb-2">
+      <template v-if="hasAccepted">
+        ✅ You’ve granted consent for analytical cookies.
+      </template>
+      <template v-else>
+        ❌ You’ve declined analytical cookies.
+      </template>
+    </p>
+
+    <button
+      class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 transition inline-block w-fit"
+      @click="toggleConsent"
+    >
+      <template v-if="hasAccepted">
+        Disable Analytics
+      </template>
+      <template v-else>
+        Enable Analytics
+      </template>
+    </button>
+  </div>
 </template>

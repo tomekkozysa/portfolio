@@ -8,10 +8,15 @@ export default defineNuxtConfig({
 		"@nuxtjs/sitemap",
 		"@nuxtjs/robots",
 		"@nuxt/content",
+		"nuxt-gtag",
 	],
 	plugins: [],
 	target: "static",
+	gtag:{
 
+		id:process.env.NUXT_PUBLIC_GA_ID,
+		initMode: 'manual',
+	},
 	app: {
 		head: {
 			charset: "utf-8",
@@ -177,6 +182,7 @@ export default defineNuxtConfig({
 		public: {
 		  gaId: process.env.NUXT_PUBLIC_GA_ID || '',
 		  cookieName:process.env.NUXT_PUBLIC_COOKIE_NAME || '',
+		  cookieExpireDays: '365'
 		}
 	  },
 

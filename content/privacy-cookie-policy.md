@@ -28,28 +28,6 @@ No personally identifiable information is collected or stored by us via Google A
 [View Google’s Privacy Policy](https://policies.google.com/privacy)
 
 
-### Data Processors
-
-We work with the following third-party service providers (data processors), who process your data on our behalf and in accordance with data protection laws.
-
-#### Mailchimp
-
-We use **Mailchimp** (The Rocket Science Group LLC) to manage our email newsletter subscriptions. When you sign up to receive emails from us, your data is securely stored and processed by Mailchimp. This may include your email address, IP address, and the date/time you subscribed.
-
-Mailchimp is based in the United States and participates in the **EU-U.S. Data Privacy Framework**, which ensures appropriate safeguards for international data transfers.
-
-[View Mailchimp’s Privacy Policy](https://mailchimp.com/legal/privacy/)
-
-You may unsubscribe at any time by using the unsubscribe link in our emails or by contacting us.
-
-#### Calendly
-
-We use **Calendly** to allow visitors to schedule meetings with us. When you use the embedded Calendly widget, Calendly may collect data such as your name, email address, and selected time slot.
-
-Calendly is also based in the United States and complies with international data protection laws, including the **EU-U.S. Data Privacy Framework**.
-
-[View Calendly’s Privacy Policy](https://calendly.com/privacy)
-
 
 ### Why We Collect It
 
@@ -57,9 +35,6 @@ We collect this information **with your consent** to:
 
 - Understand website traffic and usage patterns  
 - Improve the design, content, and performance of the site  
-- Provide scheduling functionality  
-- Enable newsletter subscriptions  
-
 
 We do **not** use this information for advertising or profiling purposes.
 
@@ -96,7 +71,7 @@ Under the **General Data Protection Regulation (GDPR)** and the **UK GDPR**, you
 - Withdraw your consent at any time  
 - Request a copy of your data in a portable format  
 
-To exercise any of these rights, please contact us at [your email or contact page].
+To exercise any of these rights, please contact us at hello@kozysa.me
 
 ### Manage Your Preferences
 
