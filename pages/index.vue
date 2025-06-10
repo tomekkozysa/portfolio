@@ -1,18 +1,22 @@
 <template>
-	<MediaText :reverse="true" class="py-8 mx-auto home-hero">
-		<template #media>
+	<div class="home-hero md:flex flex-row-reverse">
+		<div class="animation-wrapper flex items-center">
 			<HomeAnimation class="mx-auto" />
-		</template>
-		<template #text>
-			<h2>I design, prototype and build user interfaces for desktop & mobile web applications and responsive websites.</h2>
-		</template>
-	</MediaText>
+		</div>
+		<div class="hero-text max-w-ch flex items-center mt-12 md:mt-0 md:pr-4">
+			<h2>I design, prototype and build user interfaces for desktop & mobile web applications and responsive
+				websites.</h2>
+		</div>
+	</div>
 </template>
+
 <style>
-.home-hero{
+.home-hero {
 	min-height: 80vh;
-}</style>
+}
+</style>
 <script setup>
+const maxWidth = computedMaxWidth("wide");
 useHead({
 	titleTemplate: "Tomasz Kozysa | UX & UI | Responsive Web Design | Design & Development",
 });
