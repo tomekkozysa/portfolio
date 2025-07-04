@@ -12,10 +12,10 @@ online: true
 ::Spacer
 ::
 
-::Text-{:columns=2}
-TypeMix is an SVG based typographic experiment where randomised properties from colour palletes to stroke-width create quirky looking letters.
+::Text-{:columns=0}
+TypeMix, SVG based typographic experiment. 
 
-Generated images can be exported in various formats. It's entrirely built in vanilla JS and pateiently awaits for more developemnt.
+It uses SVG style properties like colour, stroke width to create new letter forms. It's built in vanilla JS.
 
 Below are some of the images generated with the app.
 ::
