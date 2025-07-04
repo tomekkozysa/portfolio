@@ -44,9 +44,15 @@ I build the SVG Morse Code Generator app with Vue.js to aid design process
 ::Spacer
 ::
 
-::Media-{width=narrow}
+::Media-{}
 #media
 <display alt="project image" src="/img/experiments/morse/printed.jpg" :src-width=600 :src-height=450></display>
 #caption
 Printed results
+::
+
+::Spacer
+::
+::Text
+Visit [Morse Code Generator](https://svg-morse-generator.netlify.app/) on netlify
 ::

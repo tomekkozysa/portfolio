@@ -41,3 +41,4 @@ Animations can be customised and downloaded as an SVG or a ready to use CSS.
 ::
 ::Text
 Visit [Rainbow Spinner](https://rainbow-spinner.netlify.app) on netlify
+::
