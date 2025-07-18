@@ -65,5 +65,5 @@ Google Firebase API provided real-time synchronisation and user authentication.
 ::Spacer
 ::
 ::Text
-Since the first campaign, the application has been fully adopted and become a crucial tool in Media Gang planning and production of their Guilerra marketing campaigns.
+Since the first campaign, the application has been fully adopted and become a crucial tool in Media Gang planning and production of their guerrilla marketing campaigns.
 ::
