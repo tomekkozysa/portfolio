@@ -16,6 +16,17 @@ export default defineNuxtConfig({
 
 		id:process.env.NUXT_PUBLIC_GA_ID,
 		initMode: 'manual',
+		config: { send_page_view: false },   // prevent auto page_view
+		initCommands: [
+		// make sure GA sees default=denied even if it loads later
+		['consent', 'default', {
+			ad_user_data: 'denied',
+			ad_personalization: 'denied',
+			ad_storage: 'denied',
+			analytics_storage: 'denied',
+			wait_for_update: 500
+		}]
+		]
 	},
 	app: {
 		head: {
