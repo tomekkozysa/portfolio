@@ -32,12 +32,12 @@ export default defineNuxtConfig({
 		head: {
 			charset: "utf-8",
 			viewport: "width=500, initial-scale=1",
-			title: "Tomasz Kozysa | UX & UI | Responsive Web Design & Development",
+			title: "Tomasz Kozysa | Freelance Web Design & Development | London ",
 			meta: [
 				{
 					name: "description",
 					content:
-						"London based, freelance digital product designer/developer, expert in making complex things simple.",
+						"London based, freelance web developer, expert in making complex things simple.",
 				},
 				{
 					name: "viewport",

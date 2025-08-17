@@ -1,7 +1,7 @@
 <script setup>
 
 useHead({
-	titleTemplate: `Web experiments | Tomasz Kozysa`,
+	titleTemplate: `Web experiments | Tomasz Kozysa | Freelance Web Design & Development | London `,
 })
 const projects = await queryContent("/experiments").find();
 const projectsByOrder = projects.sort((a, b) => {

@@ -1,7 +1,6 @@
 ---
 title: "Paul Smith"
-description: "paulsmith.com online shop development"
-head: "something for the head"
+description: "E-commerce with Vue.js for paulsmith.com"
 thumbnail: /img/work/full_size_169.png
 order: 1
 online: true

@@ -1,11 +1,11 @@
 ---
 title: "Work"
-description: "Professional projects delivered for variety of clients"
-head: "Components"
+description: "Selected projects from ux, information and interaction design, front end development"
+head: "Selected Projects | Tomasz Kozysa"
 thumbnail: /img/work/image-halfwidth.png
 ---
 
 ::Text
 # Work
-These are project delivered in the last fifteen years 
+Selected projects from over the years that informed the process. <wbr>From reasearch, UX and Interaction design all the way to web development. 
 ::

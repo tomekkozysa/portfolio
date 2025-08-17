@@ -1,7 +1,7 @@
 <script setup>
 
 useHead({
-	titleTemplate: `Selected Projects | Tomasz Kozysa`,
+	titleTemplate: `Selected Projects | Tomasz Kozysa | Freelance Web Design & Development | London `,
 })
 
 

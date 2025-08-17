@@ -18,6 +18,6 @@
 <script setup>
 const maxWidth = computedMaxWidth("wide");
 useHead({
-	titleTemplate: "Tomasz Kozysa | UX & UI | Responsive Web Design | Design & Development",
-});
+	titleTemplate: "Tomasz Kozysa | Freelance Web Design & Development | London" 
+	})
 </script>
