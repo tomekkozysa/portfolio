@@ -12,6 +12,10 @@ export const useCookieConsent = () => {
     default: () => undefined,
     maxAge: COOKIE_EXPIRE_DAYS * 86400
   })
+  const tempCookie = useCookie<boolean | undefined>('leaveMeAloneCookie', {
+    default: () => undefined,
+    maxAge: 60 * 60 // 60 minutes free pass
+  })
 
   const hasAccepted = computed(() => analyticsCookie.value === true)
 
@@ -62,7 +66,9 @@ export const useCookieConsent = () => {
 
   const rejectCookies = () => {
     analyticsCookie.value = false
+    tempCookie.value = true
     updateConsent('denied')
+    
   }
 
   const initialize = () => {
@@ -83,6 +89,7 @@ export const useCookieConsent = () => {
   return {
     hasAccepted,
     analyticsCookie,
+    tempCookie,
     acceptCookies,
     rejectCookies,
     initialize,

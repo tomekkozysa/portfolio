@@ -1,5 +1,5 @@
 <template>
-  <div v-show="analyticsCookie===undefined" 
+  <div v-show="!isHidden" 
        :class="[isHidden ?  'is_hidden' : '' ]"
        class="cookie-bar py-4 px-8 flex flex-wrap items-center gap-4 text-sm">
     <p>
@@ -27,11 +27,13 @@ const {
   acceptCookies,
   rejectCookies,
   initialize,
-  analyticsCookie
+  analyticsCookie,
+  tempCookie
 } = useCookieConsent()
 
   const isHidden = computed(()=>{
-    return hasAccepted.va
+    // return hasAccepted.value 
+    return analyticsCookie.value===true || tempCookie.value===true
   })
 onMounted(() => {
   initialize()
