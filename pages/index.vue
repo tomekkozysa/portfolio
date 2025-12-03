@@ -4,8 +4,8 @@
 			<HomeAnimation class="mx-auto" />
 		</div>
 		<div class="hero-text max-w-ch flex items-center mt-12 md:mt-0 md:pr-4">
-			<h2>I design, prototype and build user interfaces for desktop & mobile web applications and responsive
-				websites.</h2>
+			<h1>I design, prototype and build user interfaces for desktop & mobile web applications and responsive
+				websites.</h1>
 		</div>
 	</div>
 </template>
@@ -18,6 +18,6 @@
 <script setup>
 const maxWidth = computedMaxWidth("wide");
 useHead({
-	titleTemplate: "Tomasz Kozysa | Freelance Web Design & Development | London" 
-	})
+	titleTemplate: "Tomasz Kozysa | Freelance Web Design & Development | London"
+})
 </script>
