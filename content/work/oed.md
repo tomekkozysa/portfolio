@@ -1,6 +1,6 @@
 ---
 title: "OED Birthday Words"
-description: "An interactive feature for Oxford University Press"
+description: "Interactive editorial feature combining data, design, and front-end logic"
 head: "An interactive feature for Oxford University Press"
 thumbnail: /img/work/full_size_169.png
 order: 10

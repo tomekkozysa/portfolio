@@ -7,5 +7,7 @@ thumbnail: /img/work/image-halfwidth.png
 
 ::Text
 # Work
-Selected projects from almost two decades of professional work. These projects informed and helped me master the process. From research, user experience and interaction design all the way to web development. In other words, projects that still matter to me.
+Selected client work across e-commerce, media, and product teams.
+UX, interaction design, and production-ready front-end builds.
 ::
+

@@ -1,6 +1,6 @@
 ---
 title: "Routes PWA"
-description: "Mediagang, realtime delivery tracking app"
+description: "Real-time delivery tracking PWA — performance-focused UI and live data handling"
 head: "something for the head"
 thumbnail: /img/work/full_size_169.png
 order: 2

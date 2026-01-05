@@ -1,7 +1,7 @@
 ---
 title: "Ad Planner"
 description: "Yahoo! EMEA Research and Insights 2011-2014"
-head: "Research materials and data visualisations"
+head: "Internal planning tool used across Yahoo! EMEA — research-driven product design"
 thumbnail: /img/work/full_size_169.png
 order: 8
 online: true

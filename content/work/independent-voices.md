@@ -1,6 +1,6 @@
 ---
 title: "Independent Voices"
-description: "The Independent, new online section design"
+description: "Editorial product design for a high-traffic news platform"
 head: "Design system for online debate and opinion platform"
 thumbnail: /img/work/full_size_169.png
 order: 3

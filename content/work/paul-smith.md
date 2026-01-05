@@ -1,6 +1,6 @@
 ---
 title: "Paul Smith"
-description: "E-commerce with Vue.js for paulsmith.com"
+description: "E-commerce platform built with Vue.js — front-end architecture and implementation"
 thumbnail: /img/work/full_size_169.png
 order: 1
 online: true

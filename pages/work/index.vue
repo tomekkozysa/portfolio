@@ -28,5 +28,11 @@ const maxWidth = computedMaxWidth("default");
 				</NuxtLink>
 			</li>
 		</ul>
+		<div class="mt-12">
+			<strong>I'm currently available for freelance front-end / Vue / UI engineering work.</strong>
+		</div>
+		<div class="mt-4">
+			<a href="mailto:hello@kozysa.me">Get in touch</a>
+		</div>
 	</div>
 </template>
