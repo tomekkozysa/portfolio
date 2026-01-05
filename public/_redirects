@@ -1,39 +1,36 @@
 # ============================================
-# Canonical domain (optional but recommended)
-# ============================================
-# https://www.kozysa.me/* https://kozysa.me/:splat 301!
-
-
-# ============================================
 # Legacy PHP → canonical URLs (FORCED 301)
+# (note the trailing slashes)
 # ============================================
-/geimfar.php              /work/geimfar                     301!
-/lexi.php                 /work/lexi-2014                   301!
-/adplanner.php            /work/ad-planner                  301!
-/about.php                /about                            301!
-/ivy.php                  /work/independent-voices          301!
-/oed.php                  /work/oed                         301!
-/svg-morse-generator.php  /experiments/svg-morse-code-generator 301!
-/typemix.php              /experiments/typemix              301!
+/geimfar.php              /work/geimfar/                      301!
+/lexi.php                 /work/lexi-2014/                    301!
+/adplanner.php            /work/ad-planner/                   301!
+/about.php                /about/                             301!
+/ivy.php                  /work/independent-voices/           301!
+/oed.php                  /work/oed/                          301!
+/svg-morse-generator.php  /experiments/svg-morse-code-generator/ 301!
+/typemix.php              /experiments/typemix/               301!
 
 
 # ============================================
 # Kill old test / junk URLs (NO redirects)
 # ============================================
-/test                     /404                              404
-/test/                    /404                              404
+/test                     /404                               404
+/test/                    /404                               404
 
 
 # ============================================
-# Trailing slash normalization (NO slash = canonical)
+# Trailing slash normalization (slash = canonical)
+# (only redirects NO-slash → slash)
 # ============================================
-/work/:slug/              /work/:slug                       301!
-/experiments/:slug/       /experiments/:slug                301!
-/work/                    /work                             301!
-/experiments/             /experiments                      301!
+/work                     /work/                             301!
+/experiments              /experiments/                       301!
+/about                    /about/                            301!
+/work/:slug               /work/:slug/                       301!
+/experiments/:slug        /experiments/:slug/                301!
 
 
 # ============================================
 # SPA / static fallback (MUST BE LAST)
 # ============================================
-/*                        /index.html                       200
+/*                        /index.html                        200
