@@ -1,7 +1,4 @@
-# ============================================
-# Legacy PHP → canonical URLs (FORCED 301)
-# (note the trailing slashes)
-# ============================================
+# --- Legacy PHP → canonical (forced)
 /geimfar.php              /work/geimfar/                      301!
 /lexi.php                 /work/lexi-2014/                    301!
 /adplanner.php            /work/ad-planner/                   301!
@@ -11,26 +8,9 @@
 /svg-morse-generator.php  /experiments/svg-morse-code-generator/ 301!
 /typemix.php              /experiments/typemix/               301!
 
-
-# ============================================
-# Kill old test / junk URLs (NO redirects)
-# ============================================
+# --- Kill junk
 /test                     /404                               404
 /test/                    /404                               404
 
-
-# ============================================
-# Trailing slash normalization (slash = canonical)
-# (only redirects NO-slash → slash)
-# ============================================
-/work                     /work/                             301!
-/experiments              /experiments/                       301!
-/about                    /about/                            301!
-/work/:slug               /work/:slug/                       301!
-/experiments/:slug        /experiments/:slug/                301!
-
-
-# ============================================
-# SPA / static fallback (MUST BE LAST)
-# ============================================
+# --- SPA fallback (LAST)
 /*                        /index.html                        200
