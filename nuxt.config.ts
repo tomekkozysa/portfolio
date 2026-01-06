@@ -12,20 +12,20 @@ export default defineNuxtConfig({
 	],
 	plugins: [],
 	target: "static",
-	gtag:{
+	gtag: {
 
-		id:process.env.NUXT_PUBLIC_GA_ID,
+		id: process.env.NUXT_PUBLIC_GA_ID,
 		initMode: 'manual',
 		config: { send_page_view: false },   // prevent auto page_view
 		initCommands: [
-		// make sure GA sees default=denied even if it loads later
-		['consent', 'default', {
-			ad_user_data: 'denied',
-			ad_personalization: 'denied',
-			ad_storage: 'denied',
-			analytics_storage: 'denied',
-			wait_for_update: 500
-		}]
+			// make sure GA sees default=denied even if it loads later
+			['consent', 'default', {
+				ad_user_data: 'denied',
+				ad_personalization: 'denied',
+				ad_storage: 'denied',
+				analytics_storage: 'denied',
+				wait_for_update: 500
+			}]
 		]
 	},
 	app: {
@@ -44,9 +44,9 @@ export default defineNuxtConfig({
 					content:
 						"user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=.2, width=device-width",
 				},
-				{ 	
-					name : "google-site-verification",
-					content:"bvokHxMko__JtyTBnr7BeqwEjhe4yGg2_WDvSlxajts"
+				{
+					name: "google-site-verification",
+					content: "bvokHxMko__JtyTBnr7BeqwEjhe4yGg2_WDvSlxajts"
 				}
 			],
 			link: [
@@ -55,8 +55,8 @@ export default defineNuxtConfig({
 			script: [{ src: "/js/anime.js" }],
 			htmlAttrs: {
 				lang: 'en'
-			  }
-			  
+			}
+
 		},
 	},
 
@@ -90,48 +90,48 @@ export default defineNuxtConfig({
 				modifiers: {
 					format: "webp",
 					width: 1800,
-					quality:70,
-					sizes:"sm:100vw md:100vw lg:100vw xl:100vw xxl:100vw 2xl:100vw"
+					quality: 70,
+					sizes: "sm:100vw md:100vw lg:100vw xl:100vw xxl:100vw 2xl:100vw"
 				},
 			},
 			wide: { // 8xl 1440
 				modifiers: {
 					format: "webp",
 					width: 1440,
-					quality:70,
-					sizes:"sm:100vw md:100vw lg:100vw xl:100vw xxl:1440px"
+					quality: 70,
+					sizes: "sm:100vw md:100vw lg:100vw xl:100vw xxl:1440px"
 				},
 			},
 			default: { // 6xl 1152
 				modifiers: {
 					format: "webp",
 					width: 1152,
-					quality:70,
-					sizes:"sm:100vw md:100vw lg:100vw xl:1152px"
+					quality: 70,
+					sizes: "sm:100vw md:100vw lg:100vw xl:1152px"
 				},
 			},
 			half: {
 				modifiers: {
 					format: "webp",
 					width: 600,
-					quality:70,
-					sizes:"sm:100vw md:100vw lg:50vw"
+					quality: 70,
+					sizes: "sm:100vw md:100vw lg:50vw"
 				},
 			},
 			mobile: {
 				modifiers: {
 					format: "webp",
 					width: 400,
-					quality:70,
-					sizes:"sm:100vw md:400px"
+					quality: 70,
+					sizes: "sm:100vw md:400px"
 				},
 			},
 			square4: {
 				modifiers: {
 					format: "webp",
 					width: 400,
-					quality:70,
-					sizes:"sm:400px"
+					quality: 70,
+					sizes: "sm:400px"
 				},
 			},
 
@@ -171,40 +171,43 @@ export default defineNuxtConfig({
 	},
 	content: {
 		highlight: {
-		  // Theme used in all color schemes.
-		  theme: 'github-light',
-		  // OR
-		//   theme: {
-		// 	// Default theme (same as single string)
-		// 	default: 'github-light',
-		// 	// Theme used if `html.dark`
-		// 	dark: 'github-dark',
-		// 	// Theme used if `html.sepia`
-		// 	sepia: 'monokai'
-		//   }
+			theme: 'github-light',
 		},
-		markdown:{
-			anchorLinks:false,
-			mdc:true,
+		markdown: {
+			anchorLinks: false,
+			mdc: true,
 		},
-	  },
+	},
 
-	  runtimeConfig: {
+	runtimeConfig: {
 		public: {
-		  gaId: process.env.NUXT_PUBLIC_GA_ID || '',
-		  cookieName:process.env.NUXT_PUBLIC_COOKIE_NAME || '',
-		  cookieExpireDays: '365'
+			gaId: process.env.NUXT_PUBLIC_GA_ID || '',
+			posthogKey: process.env.NUXT_PUBLIC_POSTHOG_KEY || '',
+			cookieName: process.env.NUXT_PUBLIC_COOKIE_NAME || '',
+			cookieExpireDays: '365',
+			public: {
+				posthogPublicKey: process.env.NUXT_PUBLIC_POSTHOG_KEY || '',
+				posthogHost: process.env.NUXT_PUBLIC_POSTHOG_HOST || 'https://eu.i.posthog.com',
+				posthogDefaults: '2025-11-30',
+			},
 		}
-	  },
+	},
 
-	  sitemap: {
+	sitemap: {
 		hostname: 'https://kozysa.me',
-		exclude: ['/components/**','/layouts/**'],
+		exclude: ['/components/**', '/layouts/**'],
 		sources: [
-		  '/api/_sitemap__/urls'
+			'/api/_sitemap__/urls'
 		]
-	  },
-	  
+	},
+	// posthogConfig: {
+	// 	publicKey: process.env.NUXT_PUBLIC_POSTHOG_KEY, // Find it in project settings https://app.posthog.com/settings/project
+	// 	host: 'https://us.i.posthog.com', // Optional: defaults to https://us.i.posthog.com. Use https://eu.i.posthog.com for EU region
+	// 	clientConfig: {
+	// 		// Optional: PostHog client configuration options
+	// 	},
+	// },
+
 
 	compatibilityDate: "2024-10-22",
 });
