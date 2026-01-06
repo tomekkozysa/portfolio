@@ -185,11 +185,9 @@ export default defineNuxtConfig({
 			posthogKey: process.env.NUXT_PUBLIC_POSTHOG_KEY || '',
 			cookieName: process.env.NUXT_PUBLIC_COOKIE_NAME || '',
 			cookieExpireDays: '365',
-			public: {
-				posthogPublicKey: process.env.NUXT_PUBLIC_POSTHOG_KEY || '',
-				posthogHost: process.env.NUXT_PUBLIC_POSTHOG_HOST || 'https://eu.i.posthog.com',
-				posthogDefaults: '2025-11-30',
-			},
+			posthogPublicKey: process.env.NUXT_PUBLIC_POSTHOG_KEY || '',
+			posthogHost: process.env.NUXT_PUBLIC_POSTHOG_HOST || 'https://eu.i.posthog.com',
+			posthogDefaults: '2025-11-30',
 		}
 	},
 
