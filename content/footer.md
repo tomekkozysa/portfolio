@@ -5,7 +5,7 @@
      
 ::
 ::GridItem-{area=c justify=end align=end}
-With Love from Crystal Palace ❤️ <br />London, May 2025
+With Love from Crystal Palace ❤️ <br />London, May 2026
 ::
 <!-- Content of the page -->
 
